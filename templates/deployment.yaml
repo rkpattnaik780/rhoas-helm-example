@@ -17,11 +17,10 @@ spec:
       containers:
         - env:
             - name: KAFKA_HOST
-              # valueFrom:
-              #   configMapKeyRef:
-              #     name: {{ .Values.rhoas.config }}
-              #     key: kafka_host
-              value: test-insta-cc---ole--k--kh--p-a.bf2.kafka.rhcloud.com:443
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.rhoas.config }}
+                  key: kafka_host
             - name: RHOAS_SERVICE_ACCOUNT_OAUTH_TOKEN_URL
               valueFrom:
                 secretKeyRef:
