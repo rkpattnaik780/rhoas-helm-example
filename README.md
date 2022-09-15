@@ -35,4 +35,6 @@ $ oc apply -f ./rhoas-services.yaml
 
 5. Deploy the helm chart setting the appropriate values:
  
+ ```
 $ helm install . --generate-name --set-string rhoas.config=<configmap-name>,rhoas.secret=<secret-name>
+```
